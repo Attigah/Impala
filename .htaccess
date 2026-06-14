@@ -1,4 +1,5 @@
 DirectoryIndex index.html
+Options -Indexes
 
 # Clean URLs - remove .html extension (optional)
 RewriteEngine On
