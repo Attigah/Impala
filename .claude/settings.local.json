@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/frank/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/c8503ada-616e-4a0f-a7ef-eb43f6bb0380/7e267ae7-67af-4974-be91-d73169c64e64/skills/docx/**)",
+      "Bash(extract-text \"/Users/frank/Documents/impala/ImpalaFoundation_WebsiteContent_FILLED.docx\")",
+      "Bash(pandoc \"/Users/frank/Documents/impala/ImpalaFoundation_WebsiteContent_FILLED.docx\" -t markdown)",
+      "Bash(CLAUDE_CODE_TMPDIR=/tmp/impala_tmp mkdir -p /tmp/impala_tmp && pandoc \"/Users/frank/Documents/impala/ImpalaFoundation_WebsiteContent_FILLED.docx\" -t markdown 2>/dev/null)",
+      "Bash(rm -f /private/tmp/claude-501/-Users-frank-Documents-impala/f327d417-20f5-43ce-80b4-f36572366e20/tasks/*.output 2>/dev/null; echo \"cleaned\")",
+      "Bash(python3 -c ' *)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
