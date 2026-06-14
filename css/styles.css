@@ -432,7 +432,7 @@ p:last-child { margin-bottom: 0; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
-  min-height: 420px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -449,56 +449,54 @@ p:last-child { margin-bottom: 0; }
   object-fit: cover;
   transition: transform .5s ease;
 }
-.prog-card:hover .prog-card-img { transform: scale(1.06); }
+.prog-card:hover .prog-card-img { transform: scale(1.08); }
 .prog-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(6,40,40,.92) 0%, rgba(6,40,40,.3) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(6,40,40,.95) 0%, rgba(6,40,40,.65) 38%, rgba(6,40,40,.15) 72%, transparent 100%);
   transition: opacity var(--transition);
 }
-.prog-card:hover .prog-card-overlay { opacity: .95; }
+.prog-card:hover .prog-card-overlay { opacity: .92; }
 .prog-card-content {
   position: relative;
   z-index: 2;
-  padding: 2rem;
-  transform: translateY(10px);
-  transition: transform var(--transition);
+  padding: 1.6rem;
 }
-.prog-card:hover .prog-card-content { transform: translateY(0); }
 .prog-card-icon {
-  width: 52px;
-  height: 52px;
+  width: 46px;
+  height: 46px;
   background: var(--gold);
+  color: var(--white);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  margin-bottom: .9rem;
+  transition: transform var(--transition);
 }
+.prog-card:hover .prog-card-icon { transform: scale(1.1) rotate(-4deg); }
 .prog-card h3 {
   color: var(--white);
-  font-size: 1.4rem;
-  margin-bottom: .6rem;
+  font-size: 1.3rem;
+  margin-bottom: .45rem;
 }
 .prog-card p {
-  color: rgba(255,255,255,.75);
-  font-size: .9rem;
-  margin-bottom: 1rem;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .4s ease, opacity .3s ease;
-  opacity: 0;
+  color: rgba(255,255,255,.82);
+  font-size: .88rem;
+  line-height: 1.5;
+  margin-bottom: .9rem;
 }
-.prog-card:hover p { max-height: 100px; opacity: 1; }
 .prog-card-link {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
+  gap: .45rem;
   color: var(--gold-mid);
   font-weight: 600;
-  font-size: .9rem;
+  font-size: .88rem;
+  transition: gap var(--transition);
 }
+.prog-card:hover .prog-card-link { gap: .8rem; }
 
 /* ── Stats bar ── */
 .stats-bar {
@@ -690,9 +688,18 @@ p:last-child { margin-bottom: 0; }
   transform: translateY(-4px);
 }
 .value-icon {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
+  color: var(--teal);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal-light);
+  border-radius: 14px;
 }
+.value-card:hover .value-icon { background: var(--teal); color: var(--white); transition: all var(--transition); }
 .value-card h4 { color: var(--teal-dark); margin-bottom: .5rem; }
 .value-card p { font-size: .9rem; color: var(--text-light); }
 
@@ -784,7 +791,8 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
+  color: var(--teal);
 }
 .contact-info-card h4 { margin-bottom: .3rem; font-size: 1rem; }
 .contact-info-card p, .contact-info-card a {
