@@ -1,0 +1,13 @@
+# OS / editor junk
+.DS_Store
+**/.DS_Store
+
+# Local tooling (not for the public web root)
+.claude/
+
+# Source / content documents (keep local, never deploy)
+*.docx
+*.rtf
+
+# Dependencies
+node_modules/

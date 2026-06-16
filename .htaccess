@@ -1,7 +1,15 @@
 DirectoryIndex index.html
 Options -Indexes
 
+# Block source / dev / document files from being served
+<FilesMatch "\.(docx|doc|rtf|md|json|yml|yaml|ini|log|sh|bak|sql)$">
+  Require all denied
+</FilesMatch>
+
 RewriteEngine On
+
+# Block access to hidden files/dirs (.git, .claude, .DS_Store…) — keep ACME challenges working
+RewriteRule "(?:^|/)\.(?!well-known/)" - [F,L]
 
 # Force HTTPS
 RewriteCond %{HTTPS} off
@@ -24,6 +32,10 @@ RewriteRule ^(.+?)/?$ $1.html [L]
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
 </IfModule>
 
 # Cache images and assets
